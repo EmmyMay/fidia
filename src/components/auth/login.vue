@@ -11,6 +11,7 @@
       width="100%"
       height="2.875rem"
       color="#635CFF"
+      style="color: white"
       >
         Continue
       </s-btn>

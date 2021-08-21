@@ -95,14 +95,14 @@ import SLink from '../components/s-link.vue';
   /* border: 1px solid black; */
   background-repeat: no-repeat;
   background-size: contain;
-  padding-left: 11.25rem;
-  padding-right: 11.25rem;  
+  padding-left: 12.5%;
+  padding-right: 12.5%;  
   position: relative;
 }
 .stripes1 {
   position: absolute;
   top: 31rem;
-  left: 0;
+  left: .5rem;
 }
 .stripes2 {
   position: absolute;

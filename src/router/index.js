@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/dashboard.vue'
-import DashboardPayments from '../views/dashboard/home.vue'
+import DashboardPayments from '../views/dashboard/payments.vue'
 
 Vue.use(VueRouter)
 

@@ -1,55 +1,63 @@
 <template>
-  <button :class="{
-    's-btn': this.default,
-    'outlined': this.outlined,
-    'disabled': this.disabled,
-    'circle'  : this.circle,
-    'size': this.height || this.width,
+  <button
+    :class="{
+      's-btn': this.default,
+      outlined: this.outlined,
+      disabled: this.disabled,
+      circle: this.circle,
+      size: this.height || this.width,
+      shadowSecondary: this.shadowSecondary,
+      shadowPrimary: this.shadowPrimary,
     }"
     :style="cssVars"
-    >
+  >
     <slot></slot>
-   </button>
+  </button>
 </template>
 
 <script>
   export default {
-    props:{
-      default:{
+    props: {
+      default: {
         default: true,
-        type: Boolean
+        type: Boolean,
       },
-      outlined:{
+      outlined: {
         default: false,
-        type: Boolean
+        type: Boolean,
       },
-      disabled:{
+      disabled: {
         default: false,
-        type: Boolean
+        type: Boolean,
       },
       color: {
-        default: '#7735d5;',
-        type: String
+        type: String,
       },
-      circle:{
-        type: Boolean
+      circle: {
+        type: Boolean,
       },
-      height:{
-        type: String
+      height: {
+        type: String,
       },
-      width:{
-        type: String
-      }
+      width: {
+        type: String,
+      },
+      shadowSecondary: {
+        type: Boolean,
+      },
+      shadowPrimary: {
+        type: Boolean,
+      },
     },
     computed: {
-      cssVars(){
+      cssVars() {
         return {
-          '--color': this.color,
-          '--height': this.height,
-          '--width': this.width
-        }
-      }
-    }
+          "--color": this.color,
+          "--height": this.height,
+          "--width": this.width,
+        };
+      },
+    },
   };
 </script>
 
@@ -57,39 +65,48 @@
 .s-btn {
   /* width: 100%; */
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   background-color: var(--color);
   display: flex;
   gap: 0.5rem;
-  color: white;
+  color: #3C4257;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-.outlined{
+.outlined {
   /* width: 100%; */
   height: 3rem;
   border-radius: 0.5rem;
   background-color: transparent;
   border: 1px solid var(--color);
   display: flex;
-  gap: 0.5rem;
-  color: white;
+  gap: 0.25rem;
+  color: #3C4257;
   justify-content: center;
   align-items: center;
 }
-.disabled{
+.disabled {
   opacity: 0.2;
   cursor: none;
 }
-.circle{
+.circle {
   border-radius: 100%;
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   width: 2.5rem;
-  height: 2.5rem; 
+  height: 2.5rem;
 }
-.size{
- width: var(--width);
- height: var(--height);
+.size {
+  width: var(--width);
+  height: var(--height);
+}
+.shadowPrimary {
+  box-shadow: 0px 2px 5px rgba(60, 66, 87, 0.08), 0px 0px 0px 1px #5469d4,
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+.shadowSecondary {
+  box-shadow: 0px 2px 5px rgba(60, 66, 87, 0.08),
+    0px 0px 0px 1px rgba(60, 66, 87, 0.16), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 </style>

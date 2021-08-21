@@ -1,18 +1,157 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="stripes1">
+      <svg
+        width="315"
+        height="107"
+        viewBox="0 0 315 107"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M21 74.5V34.5L180 1V41L21 74.5Z" fill="#81E9FF" />
+        <path
+          d="M0 107V67.5L314.5 0V40L0 107Z"
+          fill="#0C00FA"
+          fill-opacity="0.5"
+        />
+      </svg>
+    </div>
+    <div class="stripes2">
+      <svg
+        width="314"
+        height="107"
+        viewBox="0 0 314 107"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 107V67.5L314.5 0V40L0 107Z"
+          fill="#0C00FA"
+          fill-opacity="0.5"
+        />
+      </svg>
+    </div>
+    <div class="bordered">
+      <div class="dashed">
+        <div class="logo">
+          <svg
+            width="58"
+            height="24"
+            viewBox="0 0 58 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M57.6 12.384C57.6 12.768 57.568 13.6 57.568 13.808H49.744C49.92 15.696 51.296 16.24 52.848 16.24C54.432 16.24 55.68 15.904 56.768 15.36V18.56C55.68 19.168 54.24 19.6 52.336 19.6C48.432 19.6 45.712 17.168 45.712 12.352C45.712 8.288 48.016 5.056 51.824 5.056C55.616 5.056 57.6 8.288 57.6 12.384ZM49.696 10.864H53.824C53.824 9.056 52.784 8.304 51.808 8.304C50.8 8.304 49.696 9.056 49.696 10.864ZM39.536 5.056C42.336 5.056 44.976 7.584 44.992 12.224C44.992 17.296 42.384 19.6 39.52 19.6C38.112 19.6 37.264 19.008 36.688 18.592L36.672 23.12L32.672 23.968V5.312H36.192L36.4 6.304C36.96 5.792 37.968 5.056 39.536 5.056ZM38.576 16.08C40.048 16.08 41.04 14.48 41.04 12.336C41.04 10.24 40.032 8.608 38.576 8.608C37.664 8.608 37.088 8.928 36.672 9.392L36.688 15.328C37.072 15.744 37.632 16.08 38.576 16.08ZM27.168 4.112V0.848L31.184 0V3.248L27.168 4.112ZM27.168 5.328H31.184V19.328H27.168V5.328ZM22.864 6.512C23.808 4.784 25.68 5.136 26.192 5.328V9.008C25.696 8.832 24.096 8.608 23.152 9.84V19.328H19.152V5.328H22.608L22.864 6.512ZM14.864 1.856L14.848 5.328H17.888V8.736H14.848V14.416C14.848 16.784 17.376 16.048 17.888 15.84V19.088C17.36 19.376 16.4 19.616 15.088 19.616C12.72 19.616 10.944 17.872 10.944 15.504L10.96 2.688L14.864 1.856ZM4.048 9.392C4.048 11.184 10.144 10.336 10.16 15.104C10.16 17.968 7.872 19.616 4.544 19.616C3.168 19.616 1.664 19.344 0.176 18.704V14.896C1.52 15.632 3.216 16.176 4.544 16.176C5.44 16.176 6.08 15.936 6.08 15.2C6.08 13.296 0 14 0 9.584C0 6.752 2.16 5.056 5.408 5.056C6.736 5.056 8.048 5.264 9.376 5.792V9.552C8.16 8.896 6.624 8.528 5.408 8.528C4.56 8.528 4.048 8.768 4.048 9.392Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <login/>
+        <div class="dashed-footer">
+          <div class="footer-links">
+            <p class="links-text font-14">Don’t have an account?</p>
+            <s-link text="Sign up" ></s-link>
+          </div>
+          <div class="footer-info">
+            <ul class="info-wrapper">
+              <li v-for="i in items" :key="i" class="info-item font-14">
+                  {{i}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+import Login from '../components/auth/login.vue';
+import SLink from '../components/s-link.vue';
+  export default {
+    name: "Home",
+    components: {Login, SLink},
+    data () {
+      return {
+        items:['Stripe','Contact','Privacy & terms']
+      }
+    }
+  };
 </script>
+
+
+<style scoped>
+.font-14{
+  font-size: 0.875rem;
+  line-height: 1.0444rem;
+}
+.home {
+  width: 100%;
+  min-height: 100%;
+  background-image: url("../assets/bg.svg");
+  /* border: 1px solid black; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 11.25rem;
+  padding-right: 11.25rem;  
+  position: relative;
+}
+.stripes1 {
+  position: absolute;
+  top: 31rem;
+  left: 0;
+}
+.stripes2 {
+  position: absolute;
+  top: 14.7rem;
+  right: 0;
+}
+.bordered {
+  min-height: 100%;
+  min-width: 33.25rem;
+  border: 1px solid #e3e8ee;
+  padding-left: 16.8125rem;
+  padding-right: 16.8125rem;
+}
+.dashed {
+  min-height: 98vh;
+  width: 33.875rem;
+  opacity: 0.7;
+  padding-top: 3.5rem;
+  padding-bottom: 9.5644rem;
+  border-right: 1px dashed #e3e8ee;
+  border-left: 1px dashed #e3e8ee;
+  text-align: left;
+}
+.logo {
+  padding-left: 1.1875rem;
+  margin-bottom: 2.5rem;
+}
+.info-wrapper{
+  display: flex;
+  gap: 19px;
+}
+ul li:first-of-type {
+  list-style: none;
+}
+.info-wrapper li:first-of-type::before {
+  content: "\00a9";
+}
+.info-wrapper li:not(:first-of-type) {
+  list-style-image: url('../assets/list.svg');
+  list-style-image: inside;
+
+}
+.footer-links{
+  display: flex;
+  gap: 0.25rem;
+  padding-bottom: 1.5rem;
+}
+.dashed-footer{
+  padding-top: 2rem;
+  padding-left: 1.1875rem;
+}
+</style>

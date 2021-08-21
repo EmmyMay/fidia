@@ -20,5 +20,9 @@ npm run build
 npm run lint
 ```
 
+### Links
+```
+The Payment dashboard can be found in /dashboard
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
